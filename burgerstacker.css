@@ -10,14 +10,23 @@
 }
 
 #playerBaseBun, #egBaseBun {
-  background-color: orange;
+  /* background-color: orange; */
+  background-image: url("images/burgerbase.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #bunCap {
   background-color: orange;
 }
 
-#winOverlay {
+.bunCap {
+  background-image: url("images/burgerbun.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#blackOverlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -26,7 +35,7 @@
   margin : 0px;
   background-color: black;
   opacity: 0.5;
-  z-index: 8;
+  z-index: 1;
 }
 
 .wrapper {
