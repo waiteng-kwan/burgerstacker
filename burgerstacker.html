@@ -42,10 +42,9 @@
         <!-- win overlay with button -->
       <div class="row wrapper" id="winOverlayWrapper">
         <!-- black bg -->
-        <div class="row align-items-center" id="winOverlay">
-        </div>
+        <div class="row align-items-center" id="blackOverlay"></div>
         <!-- box thing -->
-        <div class="jumbotron mx-auto my-auto" style="z-index:9;">
+        <div class="jumbotron mx-auto my-auto" style="z-index:9;" id="winPopup">
           <h3 class="display-4">Nice burger!</h3>
           <button class="btn btn-success mx-auto win-btn" id="next">Next Level &rarr;</button>
         </div>
@@ -72,7 +71,9 @@
     </div>
     <!-- ingredient div -->
     <div class="row" id="ingredientsWrapper">
-      <div class="btn col-12 ingredient-btn" id="bunCap">Top off burger with cap!</div>
+      <div class="btn btn-block btn-lg ingredient-btn" id="bunCap">
+        <span class="align-middle">Top off burger with cap!</span>
+      </div>
     </div>
   </div>
 

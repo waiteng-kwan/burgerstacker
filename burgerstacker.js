@@ -75,6 +75,7 @@ InitializeGameBoard();
 function StartGame()
 {
   winOverlayWrapper.style.opacity = 0;
+  winOverlayWrapper.style.display = "flex";
 
   //random ingredients in example burger
   for(var i = 0; i < maxIngredients; ++i)
@@ -82,13 +83,15 @@ function StartGame()
     var bunDiv = document.querySelector("#" + egBurgerDivPrefix + i.toString());
     var ingredientName = ingredientLookup[getRandomInt(0, ingredientLookup.length)];
     bunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
+    //bunDiv.style.backgroundImage = "url(''" + ingredientDictionary[ingredientName]["imgSrc"] + "'')";
 
     //push into array
     egBurger.push(ingredientName);
   }
 
   var cap = document.querySelector("#" + egBurgerDivPrefix + maxIngredients.toString());
-  cap.style.backgroundColor = "orange";
+  //cap.style.backgroundColor = "orange";
+  cap.classList.add("bunCap");
 }
 
 //fn for when player picks ingredient
@@ -111,6 +114,10 @@ function PickIngredient(ingredientName)
     //get player bun div id and change style stuff
     var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + layerCounter.toString());
     playerBunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
+
+    var bg = "url(" + ingredientDictionary[ingredientName]["imgSrc"] + ")";
+    console.log(bg);
+    playerBunDiv.style.backgroundImage = bg;
 
     //push into array
     playerBurger.push(ingredientName);
@@ -135,13 +142,15 @@ function BunCapCover()
   var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + layerCounter.toString());
   if(playerBunDiv)
   {
-    playerBunDiv.style.backgroundColor = "orange";
+    //playerBunDiv.style.backgroundColor = "orange";
+    playerBunDiv.classList.add("bunCap");
     covered = true;
   }
 
   if(CheckGameWon())
   {
-    setTimeout(NextLevel(), 10000);
+    //setTimeout(NextLevel(), 10000);
+    NextLevel();
   }
   else {
     setTimeout(LoseLevel(), 10000);
@@ -167,6 +176,7 @@ function RemovePreviousIngredient()
   if(covered)
   {
     covered = false;
+    playerBunDiv.classList.remove("bunCap");
   }
   else
   {
@@ -174,6 +184,7 @@ function RemovePreviousIngredient()
   }
 
   playerBunDiv.style.backgroundColor = "";
+  playerBunDiv.style.backgroundImage = "";
 
   --layerCounter;
   //make sure cant go below 0
@@ -203,6 +214,7 @@ function CheckGameWon()
 function NextLevel()
 {
   winOverlayWrapper.style.opacity = 1;
+  winOverlayWrapper.style.display = "flex";
 
   //inc ingredients
   if(++clearedBurgerCounter > 2)
@@ -220,7 +232,6 @@ function NextLevel()
 //lost level
 function LoseLevel()
 {
-  console.log("scrub");
   RestartLevel();
 }
 
@@ -236,6 +247,8 @@ function RestartLevel()
     //get player bun div id and change style stuff
     var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + i.toString());
     playerBunDiv.style.backgroundColor = "";
+    playerBunDiv.style.backgroundImage = "";
+    playerBunDiv.classList.remove("bunCap");
   }
 }
 
@@ -252,9 +265,12 @@ function ResetGame()
     //get player bun div id and change style stuff
     var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + i.toString());
     playerBunDiv.style.backgroundColor = "";
+    playerBunDiv.style.backgroundImage = "";
+    playerBunDiv.classList.remove("bunCap");
   }
 }
 
+//resets and starts a new game
 function ResetAndStartGame()
 {
   ResetGame();
