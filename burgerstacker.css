@@ -1,0 +1,75 @@
+#exampleBurger {
+  background-color: coral;
+  height: 500px;
+}
+
+#playerBurger {
+  background-color: #92a8d1;
+  height: 500px;
+  font-weight: bold;
+}
+
+#playerBaseBun, #egBaseBun {
+  background-color: orange;
+}
+
+#bunCap {
+  background-color: orange;
+}
+
+#winOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin : 0px;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 8;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin : 0px;
+  opacity: 0;
+  z-index: 10;
+  transition: 0.8s;
+}
+
+.win-btn {
+  height: 60px;
+  width: 150px;
+  display: block;
+  z-index: 12;
+}
+
+.win-btn:hover {
+  transition: 0.5s;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.ingredient-btn {
+  height: 65px;
+  opacity: 1;
+}
+
+.ingredient-btn:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.burger {
+  height: 40px;
+}
+
+.spacer {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}

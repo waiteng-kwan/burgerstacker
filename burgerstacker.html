@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="burgerstacker.css">
+
+  <!-- manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <title>Burger Stacker Game</title>
+</head>
+<body>
+  <!-- game div -->
+  <div class="container">
+    <!-- example burger and player burger div -->
+    <div class="row">
+      <div class="col" id="exampleBurger">
+        <div class="spacer"></div>
+
+        <div class="burger col-10 offset-1" id="egBurger-9"></div>
+        <div class="burger col-10 offset-1" id="egBurger-8"></div>
+        <div class="burger col-10 offset-1" id="egBurger-7"></div>
+        <div class="burger col-10 offset-1" id="egBurger-6"></div>
+        <div class="burger col-10 offset-1" id="egBurger-5"></div>
+        <div class="burger col-10 offset-1" id="egBurger-4"></div>
+        <div class="burger col-10 offset-1" id="egBurger-3"></div>
+        <div class="burger col-10 offset-1" id="egBurger-2"></div>
+        <div class="burger col-10 offset-1" id="egBurger-1"></div>
+        <div class="burger col-10 offset-1" id="egBurger-0"></div>
+        <div class="burger" id="egBaseBun"></div>
+
+        <div class="spacer"></div>
+      </div>
+      <div class="col" id="playerBurger">
+        <!-- win overlay with button -->
+      <div class="row wrapper" id="winOverlayWrapper">
+        <!-- black bg -->
+        <div class="row align-items-center" id="winOverlay">
+        </div>
+        <!-- box thing -->
+        <div class="jumbotron mx-auto my-auto" style="z-index:9;">
+          <h3 class="display-4">Nice burger!</h3>
+          <button class="btn btn-success mx-auto win-btn" id="next">Next Level &rarr;</button>
+        </div>
+      </div>
+
+
+        <!-- game stuff -->
+        <div class="spacer"></div>
+
+        <div class="burger col-10 offset-1" id="playerBurger-9"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-8"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-7"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-6"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-5"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-4"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-3"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-2"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-1"></div>
+        <div class="burger col-10 offset-1" id="playerBurger-0"></div>
+        <div class="burger" id="playerBaseBun"></div>
+
+        <div class="spacer"></div>
+      </div>
+    </div>
+    <!-- ingredient div -->
+    <div class="row" id="ingredientsWrapper">
+      <div class="btn col-12 ingredient-btn" id="bunCap">Top off burger with cap!</div>
+    </div>
+  </div>
+
+
+  <!-- bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- custom scripts -->
+  <script src = "burgerstacker-dictionary.js" type="text/javascript"></script>
+  <script src = "burgerstacker.js" type="text/javascript"></script>
+</body>
+</html>
