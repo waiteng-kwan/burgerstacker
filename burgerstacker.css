@@ -1,12 +1,17 @@
 #exampleBurger {
-  background-color: coral;
+  background-color: lightgrey;
   height: 500px;
+  border: 1px solid black;
 }
 
 #playerBurger {
-  background-color: #92a8d1;
+  background-color: lightgrey;
   height: 500px;
-  font-weight: bold;
+  border: 1px solid black;
+}
+
+#order {
+  background-color: lightblue;
 }
 
 #playerBaseBun, #egBaseBun {
@@ -47,7 +52,7 @@
   margin : 0px;
   opacity: 0;
   z-index: 10;
-  transition: 0.8s;
+  transition: 1.5s;
 }
 
 .win-btn {

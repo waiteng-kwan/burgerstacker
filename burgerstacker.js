@@ -75,15 +75,15 @@ InitializeGameBoard();
 function StartGame()
 {
   winOverlayWrapper.style.opacity = 0;
-  winOverlayWrapper.style.display = "flex";
+  winOverlayWrapper.style.display = "none";
 
   //random ingredients in example burger
   for(var i = 0; i < maxIngredients; ++i)
   {
     var bunDiv = document.querySelector("#" + egBurgerDivPrefix + i.toString());
     var ingredientName = ingredientLookup[getRandomInt(0, ingredientLookup.length)];
-    bunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
-    //bunDiv.style.backgroundImage = "url(''" + ingredientDictionary[ingredientName]["imgSrc"] + "'')";
+    //bunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
+    bunDiv.style.backgroundImage = "url(" + ingredientDictionary[ingredientName]["imgSrc"] + ")";
 
     //push into array
     egBurger.push(ingredientName);
@@ -113,10 +113,9 @@ function PickIngredient(ingredientName)
 
     //get player bun div id and change style stuff
     var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + layerCounter.toString());
-    playerBunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
+    //playerBunDiv.style.backgroundColor = ingredientDictionary[ingredientName]["color"];
 
     var bg = "url(" + ingredientDictionary[ingredientName]["imgSrc"] + ")";
-    console.log(bg);
     playerBunDiv.style.backgroundImage = bg;
 
     //push into array
@@ -149,8 +148,7 @@ function BunCapCover()
 
   if(CheckGameWon())
   {
-    //setTimeout(NextLevel(), 10000);
-    NextLevel();
+    setTimeout(NextLevel(), 10000);
   }
   else {
     setTimeout(LoseLevel(), 10000);
