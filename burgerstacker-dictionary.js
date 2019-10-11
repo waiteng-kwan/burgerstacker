@@ -17,7 +17,6 @@ var ingredientDictionary = {
   "bacon" : {
     "imgSrc" : "images/bacon.png",
     "playerPushFn" : function(){ PickIngredient("bacon"); },
-
     "color" : "#e34252"
   },
   "onion": {

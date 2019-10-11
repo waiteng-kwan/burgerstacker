@@ -167,17 +167,20 @@ function RemovePreviousIngredient()
 
   //get current playerDiv
   var playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + layerCounter.toString());
-  if(!playerBunDiv)
-    return;
 
   //if covered, remove bun cap
   if(covered)
   {
     covered = false;
+    if(!playerBunDiv)
+      return;
+
     playerBunDiv.classList.remove("bunCap");
   }
   else
   {
+    var i = (layerCounter - 1) < 0 ? 0 : (layerCounter - 1);
+    playerBunDiv = document.querySelector("#" + playerBurgerDivPrefix + i.toString());
     playerBurger.pop();
   }
 
